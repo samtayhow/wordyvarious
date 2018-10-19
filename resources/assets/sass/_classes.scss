@@ -1,0 +1,194 @@
+
+// Classes
+
+.account {
+    display:block; 
+    min-height:50vh;
+}
+
+.byline {
+    font-family: 'Roboto Mono', monospace;
+    color:rgba(0,0,0,0.66);
+    font-size:0.8em;
+    text-transform:lowercase;
+    display:block;
+    margin-right:1rem;
+}
+
+.byline:last-child {
+    margin:0;
+}
+
+.container {
+    margin-left:auto;
+    margin-right:auto;
+    min-width:30rem;
+    max-width:50vw;
+    display:block;
+}
+
+.cta {
+    background-color:orange;
+
+    background-size:cover;
+    background-position: center; 
+    display:block; 
+    min-height:50vh; 
+    margin-bottom:10vmin; 
+    padding:10vmin; 
+    color:#FFF; 
+    text-align:center;
+}
+
+
+
+.cta div[data-role="card"] {
+    width:auto;
+    margin:0;
+    color:black;
+    padding:3em;
+    font-size:1.15em;
+}
+
+.cta div[data-role="card"] button {
+    margin-top:1em;
+}
+
+.description {
+    margin-bottom:1em;
+}
+
+.form-group {
+    margin:1em;
+    display:block;
+}
+
+.full-width {
+    width:100%;
+}
+
+
+
+.helper {
+    font-size:0.75em;
+}
+
+.libs {
+    width:50%;
+    min-width:20em;
+}
+
+.libs em {
+    border-bottom:0.1em solid #FFF;
+    padding:0 0.25em 0 0.25em;
+}
+
+.libs p {
+    font-size:2em;
+}
+
+.list.snippet .byline {
+    display:inline-block;
+}
+
+.list.title {
+    margin-right:0.5em;
+}
+
+.login {
+    display:block; 
+    min-height:50vh;
+}
+
+.logo {
+    display:inline-block;
+}
+
+.logo img {
+    height:2em;
+}
+
+.muted {
+    color:rgba(0,0,0,0.5);
+}
+
+.return-arrow {
+    display:block;
+    background-color:#ddd;
+    font-size:2rem;
+    text-align:center;
+    color:#444;
+    padding:1rem;
+}
+
+.return-arrow:hover {
+    background-color:#aaa;
+    color:#fff;
+}
+
+.search-bar {
+    margin-right: 3em;
+    display:none;
+}
+
+.search-bar input, .search-box input {
+    border-top-right-radius:0;
+    border-bottom-right-radius:0;
+    border-right:none;
+    width:5vw;
+}
+
+.search-bar button, .search-box button {
+    border-top-left-radius:0;
+    border-bottom-left-radius:0;
+}
+
+.search-bar button svg, .search-box button svg {
+    margin: 0 0.5em 0 0.5em;
+}
+
+.search-box {
+    display:block;
+    text-align:center;
+}
+
+.search-box input {
+    font-size:1.5em;
+    width:auto;
+}
+
+.words {
+    display:table;
+    height:100%;
+    width:100%;
+    min-height:5em;
+}
+
+.words .col {
+    display:table-cell;
+    width:33%;
+    border-right:1px solid rgba(0,0,0,0.1);
+    padding:1rem;
+    font-size:0.8rem;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.words .col:last-child {
+    border:none;
+}
+
+.words .col li {
+    display:block;
+}
+
+.sr-only {
+    visibility:none;
+}
+
+.tabular {
+    display:table;
+}
+
+.user-controls {
+    text-transform:initial;
+}

@@ -1,0 +1,42 @@
+
+// Reset
+
+
+body {
+  margin: 0;
+}
+
+div {
+    display:inline-block;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+i, cite, em, var, address, dfn {
+    font-style: normal;
+}
+
+input {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+p {
+  padding:0;
+  margin:0;
+}
+
+ul,
+li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+
+nav {
+    display: inline;
+    margin-right: auto;
+}

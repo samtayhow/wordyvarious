@@ -1,0 +1,114 @@
+
+// Components
+
+
+[data-role="card"] {
+  background-color: #fff;
+  padding: 0;
+  display: inline-block;
+  box-shadow: 0.25vmin 0.25vmin 0.25vmin rgba(0, 0, 0, 0.05);
+  margin: 2rem 1rem 2rem 1rem;
+}
+
+[data-role="card"] main {
+  padding:1.5rem;
+}
+
+[data-role="card-header"] {
+  display: block;
+  border-bottom:1px solid rgba(0,0,0,0.05);
+  padding: 1.5rem;
+}
+
+[data-role="card-footer"] {
+  display: block;
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  text-align:right;
+}
+
+div[data-role="play"]{
+    color:#FFF;
+}
+
+div[data-role="play"] .controls {
+    background-color:rgba(0,0,0,0.1);
+    padding:1em;
+    border-bottom-left-radius: 0.5em;
+}
+
+div[data-role="play"] .controlPanel {
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    color:$color-muted;
+    font-family: 'Roboto Mono', monospace;
+    font-size:0.8em;
+    height:4em;
+}
+
+div[data-role="play"] .controlPanel li {
+    margin-right:1em;
+}
+
+div[data-role="play"] .controlPanel li:last-of-type{
+    margin-right:0;
+}
+
+div[data-role="play"] .nowPlaying {
+    background-color:rgba(0,0,0,0.1);
+    padding:1em;
+    border-bottom-right-radius: 0.5em;
+}
+
+div[data-role="play"] .big, div[data-role="play"] .little {
+    display:block;
+}
+div[data-role="play"] .big {
+    font-family:'Oswald', sans-serif;
+    text-transform:lowercase;
+    font-size:5rem;
+}
+div[data-role="play"] .little {
+    font-family:'Roboto Mono', monospace;
+    text-transform:uppercase;
+    font-size:1.5rem;
+}
+
+div[data-role="play"] .refresh {
+    display:block;
+}
+
+div[data-role="play"] .refresh svg {
+    color:rgba(255,255,255,0.1);
+    font-size:5rem;
+}
+
+div[data-role="play"] .refresh svg:hover {
+    color:rgba(255,255,255,1);
+}
+
+div[data-role="play"].ui {
+    height:100vh;
+    background:$color-accent;
+    background:linear-gradient(120deg, $color-secondary 0%, $color-primary 100%);
+    display:flex;
+    flex-wrap:wrap;
+    align-items:stretch;
+    align-content:stretch;
+}
+div[data-role="play"] .wrapper {
+    width:100%;
+    text-align:center;
+    align-self:flex-start;
+}
+
+div[data-role="play"] .list.snippet {
+    display:inline;
+    color:#fff;
+}
+
+div[data-role="play"] .byline {
+    color:$color-muted;
+    display:inline;
+    margin:0;
+}
