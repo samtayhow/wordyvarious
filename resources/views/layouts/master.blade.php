@@ -32,38 +32,6 @@
         "website": "example.org"
     }
     
-    var list = {
-        "id":1,
-        "title":"Kwaidan",
-        "author":"Taylor1",
-        "dateCreated":"2018.02.20 11:45PM EST",
-        "dateModified":"2018.02.21 3:19PM EST",
-        "description": "This list is based on Kwaidan: Stories and Studies of Strange Things (怪談 Kaidan), is a book by Lafcadio Hearn that features several Japanese ghost stories and a brief non-fiction study on insects.",
-        "tags": ["politics", "literature", "activism", "scifi"],
-        "faves": 67,
-        "shares": 3,
-        "slug": "kwaidan",
-        "wordsColumnLength": 0,
-        "words": ["ghost", "memory", "yokai", "folk", "folklore", "hearsay", "whispers", "curses", "mountains", "streams", "rivers", "demon", "gods", "haunt", "tradition", "ritual", "stories", "lore", "priest", "monks", "monastery", "haiku"]
-    }
-
-    // Parsing
-    list.words.sort();
-    list.wordsColumnLength = Math.ceil(list.words.length * 0.33333333);
-    list.wordsOrdered = {
-        "column1": [],
-        "column2": [],
-        "column3": []
-    };
-    for (var i = 0; i < list.wordsColumnLength; i++) { 
-        list.wordsOrdered.column1.push(list.words[i]);
-    }
-    for (var i = list.wordsColumnLength; i < (list.wordsColumnLength * 2); i++) { 
-        list.wordsOrdered.column2.push(list.words[i]);
-    }
-    for (var i = (list.wordsColumnLength * 2); i < list.words.length; i++) { 
-        list.wordsOrdered.column3.push(list.words[i]);
-    }
     </script>
     
   </head>

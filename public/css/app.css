@@ -102,12 +102,10 @@ h6 {
 
 h1 {
   font-size: 2.5rem;
-  text-transform: uppercase;
 }
 
 h2 {
   font-size: 2rem;
-  text-transform: uppercase;
 }
 
 h3 {
@@ -263,7 +261,7 @@ li.tag:last-child:after {
   display: inline-block;
   -webkit-box-shadow: 0.25vmin 0.25vmin 0.25vmin rgba(0, 0, 0, 0.05);
           box-shadow: 0.25vmin 0.25vmin 0.25vmin rgba(0, 0, 0, 0.05);
-  margin: 2rem 1rem 2rem 1rem;
+  margin: 1rem;
 }
 
 [data-role="card"] main {

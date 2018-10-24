@@ -8,18 +8,28 @@ export default class ShowList extends Component {
     this.state = {
       error: null,
       isLoaded: false,
-      wordLists: []
+      wordList: []
     };
   }
 
   componentDidMount() {
-    fetch("/api/lists")
+      
+    // get or assign slug
+    if (document.getElementById('ShowList')) {
+        var slug = document.getElementById('ShowList').getAttribute('data-slug');
+        var author = document.getElementById('ShowList').getAttribute('data-author');
+    } else {
+        var author = 'janes';
+        var slug = 'fairytales';
+    }
+
+    fetch("/api/@" + author + "/" + slug)
       .then(res => res.json())
       .then(
         (result) => {
           this.setState({
             isLoaded: true,
-            wordLists: result
+            wordList: result
           });
         },
         // Note: it's important to handle errors here
@@ -35,19 +45,21 @@ export default class ShowList extends Component {
   }
 
   render() {
-    const { error, isLoaded, wordLists } = this.state;
+    const { error, isLoaded, wordList } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
-      console.log(wordLists);
+        
+        // get author name
+        if (document.getElementById('ShowList')) {
+            wordList.author = document.getElementById('ShowList').getAttribute('data-author');
+        }
+        
+      console.log(wordList);
       return (
-        <div>
-          {wordLists.map(wordList => (
-            <WordList id={wordList.id} tags={wordList.tags} faves={wordList.faves} shares={wordList.shares} slug={wordList.slug} title={wordList.title} author={wordList.author} dateCreated={wordList.created_at} dateModified={wordList.updated_at} description={wordList.description} words={wordList.words} format={"snippet"} />
-          ))}
-        </div>
+        <WordList id={wordList.id} tags={wordList.tags} faves={wordList.faves} shares={wordList.shares} slug={wordList.slug} title={wordList.title} author={wordList.author} dateCreated={wordList.created_at} dateModified={wordList.updated_at} description={wordList.description} words={wordList.words} format={"unabridged"} />
       );
     }
   }

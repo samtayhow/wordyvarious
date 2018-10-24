@@ -26,4 +26,5 @@ Route::get('user/{u}', 'UsersController@lookup');
 Route::get('lists', 'WordListsController@index');
 Route::post('lists', 'WordListsController@store');
 Route::get('list/{slug}', 'WordListsController@show');
+Route::get('@{u}/{slug}', 'WordListsController@show');
 Route::delete('list/{slug}', 'WordListsController@delete');

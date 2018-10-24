@@ -5,7 +5,7 @@
 @section('main')
 
     <div class="container">
-        <div id="ShowList" class="list"></div>   
+        <div id="ShowList" class="list" data-slug="{{ $slug }}" data-author="{{ $author }}"></div>   
     </div>
 
 @endsection

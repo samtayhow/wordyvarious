@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\WordList;
 
 class PagesController extends Controller
 {
@@ -21,11 +23,17 @@ class PagesController extends Controller
         return view('create');
     }
 
-    public function wordList()
+    public function wordList($u, $slug)
     {
-        return view('list');
+        $u = User::where('username', $u)->first() ?? abort(404);
+        return view('list', ['slug' => $slug, 'author' => $u->username]);
     }
 
+    public function wordLists()
+    {
+        return view('lists');
+    }    
+    
     public function search()
     {
         return view('search');

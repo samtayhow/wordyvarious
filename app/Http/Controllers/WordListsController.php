@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use App\User;
 use App\WordList;
 
 class WordListsController extends Controller
@@ -14,9 +15,10 @@ class WordListsController extends Controller
         return response(WordList::all(),200);
     }
  
-    public function show($slug)
+    public function show($u, $slug)
     {
-        return WordList::where('slug', $slug)->first() ?? abort(404);
+        $u = User::where('username', $u)->first() ?? abort(404);
+        return WordList::where('slug', $slug)->where('author', $u->id)->first() ?? abort(404);
     }
  
     public function store(Request $request)

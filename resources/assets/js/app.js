@@ -19,4 +19,5 @@ require('./components/returnArrow');
 require('./components/footer');
 require('./components/wordList');
 require('./components/play');
+require('./components/ShowLists');
 require('./components/ShowList');

@@ -20,15 +20,33 @@ export default class WordList extends Component {
             "wordsColumnLength": 0,
             "words": this.props.words.split(" ")
         }
-    
+
+        // Parsing
+        list.words.sort();
+        list.wordsColumnLength = Math.ceil(list.words.length * 0.33333333);
+        list.wordsOrdered = {
+            "column1": [],
+            "column2": [],
+            "column3": []
+        };
+        for (var i = 0; i < list.wordsColumnLength; i++) { 
+            list.wordsOrdered.column1.push(list.words[i]);
+        }
+        for (var i = list.wordsColumnLength; i < (list.wordsColumnLength * 2); i++) { 
+            list.wordsOrdered.column2.push(list.words[i]);
+        }
+        for (var i = (list.wordsColumnLength * 2); i < list.words.length; i++) { 
+            list.wordsOrdered.column3.push(list.words[i]);
+        }
+        
         if(this.props.format == "unabridged"){
             return (
                 <div className="full-width" data-role="card" data-list-id={ this.props.id }>
                     <header data-role="card-header">
-                        <h1>▰ { list.title }</h1>
+                        <h1>{ list.title }</h1>
                         <div className="byline">
                             <i className="fas fa-user"></i> <a href={ "/@" + list.author }>{ list.author }</a> <i className="fas fa-at"></i> <span className="sr-only">created on</span> { list.dateCreated }<br/>
-                            <i className="fas fa-link"></i> <input value={ "wordyvario.us/@" + list.author + "/" + list.title } className="share" readOnly /> <button className="small"><i className="fas fa-copy"></i></button>
+                            <i className="fas fa-link"></i> <input value={ "wordyvario.us/@" + list.author + "/" + list.slug } className="share" readOnly /> <button className="small"><i className="fas fa-copy"></i></button>
                         </div>
                     </header>
                     <main>
@@ -72,7 +90,7 @@ export default class WordList extends Component {
             return (
                 <div className="full-width" data-role="card">
                     <header data-role="card-header">
-                        <h3><a href={"list/" + list.slug}>▰ {list.title}</a></h3>
+                        <h3><a href={"list/" + list.slug}>{list.title}</a></h3>
                         <div className="byline"><i className="fas fa-user"></i> <a href={"/@" + list.author}>{list.author}</a> <i className="fas fa-at"></i> <span className="sr-only">created on</span> {list.dateCreated}</div>
                     </header>
                     <main>
@@ -96,7 +114,7 @@ export default class WordList extends Component {
             return (
                 <div className="full-width" data-role="card" data-list-id={ list.id }>
                     <main>
-                        <h3><a href={"list/" + list.slug}>▰ {list.title}</a></h3>
+                        <h3><a href={"list/" + list.slug}>{list.title}</a></h3>
                         <div className="byline"><i className="fas fa-user"></i> <a href={"/@" + list.author}>{list.author}</a> <i className="fas fa-at"></i> <span className="sr-only">created on</span> {list.dateCreated} <i className="fas fa-star"></i> {list.faves} <span className="sr-only">faves</span> <i className="fas fa-share"></i> {list.shares} <span className="sr-only">shares</span></div>
                         <div className="byline"><i className="fas fa-tags"></i> <span className="sr-only">tags:</span>
                             <ul className="tags">
@@ -114,7 +132,7 @@ export default class WordList extends Component {
         if(this.props.format == "line"){
             return (
                 <div className="list snippet">
-                    <a href={"list/" + list.slug}>▰ <span className="list title">{list.title}</span></a>
+                    <a href={"list/" + list.slug}><span className="list title">{list.title}</span></a>
                     <div className="byline">by <a href={"/@" + list.author}>{list.author}</a></div>
                     <div className="byline"><i className="fas fa-star"></i> <a>{list.faves}</a> <span className="sr-only">faves</span> <i className="fas fa-share"></i> <a>{list.shares}</a> <span className="sr-only">shares</span></div>
                 </div>
