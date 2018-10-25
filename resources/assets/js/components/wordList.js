@@ -7,7 +7,7 @@ export default class WordList extends Component {
     render() {
 
         var list = {
-            "address": "@" + this.props.author + "/" + this.props.slug,
+            "address": "/@" + this.props.author + "/" + this.props.slug,
             "id": this.props.id,
             "title": this.props.title,
             "author": this.props.author,
@@ -46,8 +46,15 @@ export default class WordList extends Component {
                     <header data-role="card-header">
                         <h1>{ list.title }</h1>
                         <div className="byline">
-                            <i className="fas fa-user"></i> <a href={ "/@" + list.author }>{ list.author }</a> <i className="fas fa-at"></i> <span className="sr-only">created on</span> { list.dateCreated }<br/>
-                            <i className="fas fa-link"></i> <input value={ "wordyvario.us/@" + list.author + "/" + list.slug } className="share" readOnly /> <button className="small"><i className="fas fa-copy"></i></button>
+                            <div className="group">
+                                <i className="fas fa-user"></i> <a href={ "/@" + list.author }>{ list.author }</a> <i className="fas fa-at"></i> <span className="sr-only">created on</span> { list.dateCreated }
+                            </div>
+                            <div className="group">
+                                <i className="fas fa-link"></i> <input value={ "wordyvario.us/@" + list.author + "/" + list.slug } className="share" readOnly /> <button className="small"><i className="fas fa-copy"></i></button>
+                            </div>
+                            <div className="group">
+                                <a href={ list.address + "/play" }><button className="small"><i className="fas fa-gamepad"></i> Play with this list</button></a>
+                            </div>
                         </div>
                     </header>
                     <main>
@@ -91,7 +98,7 @@ export default class WordList extends Component {
             return (
                 <div className="full-width" data-role="card">
                     <header data-role="card-header">
-                        <h3><a href={list.address}>{list.title}</a></h3>
+                        <h3><a href={ list.address }>{ list.title }</a></h3>
                         <div className="byline"><i className="fas fa-user"></i> <a href={"/@" + list.author}>{list.author}</a> <i className="fas fa-at"></i> <span className="sr-only">created on</span> {list.dateCreated}</div>
                     </header>
                     <main>

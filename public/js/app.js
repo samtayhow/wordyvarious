@@ -467,7 +467,7 @@ var WordList = function (_Component) {
         value: function render() {
 
             var list = {
-                "address": "@" + this.props.author + "/" + this.props.slug,
+                "address": "/@" + this.props.author + "/" + this.props.slug,
                 "id": this.props.id,
                 "title": this.props.title,
                 "author": this.props.author,
@@ -514,32 +514,53 @@ var WordList = function (_Component) {
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'div',
                             { className: 'byline' },
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fas fa-user' }),
-                            ' ',
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'a',
-                                { href: "/@" + list.author },
-                                list.author
+                                'div',
+                                { className: 'group' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fas fa-user' }),
+                                ' ',
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'a',
+                                    { href: "/@" + list.author },
+                                    list.author
+                                ),
+                                ' ',
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fas fa-at' }),
+                                ' ',
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'span',
+                                    { className: 'sr-only' },
+                                    'created on'
+                                ),
+                                ' ',
+                                list.dateCreated
                             ),
-                            ' ',
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fas fa-at' }),
-                            ' ',
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'span',
-                                { className: 'sr-only' },
-                                'created on'
+                                'div',
+                                { className: 'group' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fas fa-link' }),
+                                ' ',
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { value: "wordyvario.us/@" + list.author + "/" + list.slug, className: 'share', readOnly: true }),
+                                ' ',
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'button',
+                                    { className: 'small' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fas fa-copy' })
+                                )
                             ),
-                            ' ',
-                            list.dateCreated,
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fas fa-link' }),
-                            ' ',
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { value: "wordyvario.us/@" + list.author + "/" + list.slug, className: 'share', readOnly: true }),
-                            ' ',
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'button',
-                                { className: 'small' },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fas fa-copy' })
+                                'div',
+                                { className: 'group' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'a',
+                                    { href: list.address + "/play" },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'button',
+                                        { className: 'small' },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fas fa-gamepad' }),
+                                        ' Play with this list'
+                                    )
+                                )
                             )
                         )
                     ),
