@@ -7,6 +7,7 @@ export default class WordList extends Component {
     render() {
 
         var list = {
+            "address": "@" + this.props.author + "/" + this.props.slug,
             "id": this.props.id,
             "title": this.props.title,
             "author": this.props.author,
@@ -90,7 +91,7 @@ export default class WordList extends Component {
             return (
                 <div className="full-width" data-role="card">
                     <header data-role="card-header">
-                        <h3><a href={"list/" + list.slug}>{list.title}</a></h3>
+                        <h3><a href={list.address}>{list.title}</a></h3>
                         <div className="byline"><i className="fas fa-user"></i> <a href={"/@" + list.author}>{list.author}</a> <i className="fas fa-at"></i> <span className="sr-only">created on</span> {list.dateCreated}</div>
                     </header>
                     <main>
@@ -114,7 +115,7 @@ export default class WordList extends Component {
             return (
                 <div className="full-width" data-role="card" data-list-id={ list.id }>
                     <main>
-                        <h3><a href={"list/" + list.slug}>{list.title}</a></h3>
+                        <h3><a href={list.address}>{list.title}</a></h3>
                         <div className="byline"><i className="fas fa-user"></i> <a href={"/@" + list.author}>{list.author}</a> <i className="fas fa-at"></i> <span className="sr-only">created on</span> {list.dateCreated} <i className="fas fa-star"></i> {list.faves} <span className="sr-only">faves</span> <i className="fas fa-share"></i> {list.shares} <span className="sr-only">shares</span></div>
                         <div className="byline"><i className="fas fa-tags"></i> <span className="sr-only">tags:</span>
                             <ul className="tags">
@@ -132,7 +133,7 @@ export default class WordList extends Component {
         if(this.props.format == "line"){
             return (
                 <div className="list snippet">
-                    <a href={"list/" + list.slug}><span className="list title">{list.title}</span></a>
+                    <a href={list.address}><span className="list title">{list.title}</span></a>
                     <div className="byline">by <a href={"/@" + list.author}>{list.author}</a></div>
                     <div className="byline"><i className="fas fa-star"></i> <a>{list.faves}</a> <span className="sr-only">faves</span> <i className="fas fa-share"></i> <a>{list.shares}</a> <span className="sr-only">shares</span></div>
                 </div>

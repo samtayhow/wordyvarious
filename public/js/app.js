@@ -467,6 +467,7 @@ var WordList = function (_Component) {
         value: function render() {
 
             var list = {
+                "address": "@" + this.props.author + "/" + this.props.slug,
                 "id": this.props.id,
                 "title": this.props.title,
                 "author": this.props.author,
@@ -672,7 +673,7 @@ var WordList = function (_Component) {
                             null,
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'a',
-                                { href: "list/" + list.slug },
+                                { href: list.address },
                                 list.title
                             )
                         ),
@@ -775,7 +776,7 @@ var WordList = function (_Component) {
                             null,
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'a',
-                                { href: "list/" + list.slug },
+                                { href: list.address },
                                 list.title
                             )
                         ),
@@ -856,7 +857,7 @@ var WordList = function (_Component) {
                     { className: 'list snippet' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'a',
-                        { href: "list/" + list.slug },
+                        { href: list.address },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'span',
                             { className: 'list title' },
@@ -56867,7 +56868,7 @@ var ShowLists = function (_Component) {
           'div',
           null,
           wordLists.map(function (wordList) {
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__wordList_js__["default"], { id: wordList.id, tags: wordList.tags, faves: wordList.faves, shares: wordList.shares, slug: wordList.slug, title: wordList.title, author: wordList.author, dateCreated: wordList.created_at, dateModified: wordList.updated_at, description: wordList.description, words: wordList.words, format: "snippet" });
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__wordList_js__["default"], { id: wordList.id, tags: wordList.tags, faves: wordList.faves, shares: wordList.shares, slug: wordList.slug, title: wordList.title, author: wordList.author_name, dateCreated: wordList.created_at, dateModified: wordList.updated_at, description: wordList.description, words: wordList.words, format: "snippet" });
           })
         );
       }
