@@ -18,6 +18,11 @@ class PagesController extends Controller
         return view('play');
     }
 
+    public function playList()
+    {
+        return view('playlist');
+    }    
+    
     public function create()
     {
         return view('create');

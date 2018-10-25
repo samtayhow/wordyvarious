@@ -15,6 +15,7 @@
 Route::get('/', 'PagesController@index');
 Route::get('@{u}', 'PagesController@user');
 Route::get('@{u}/{slug}', 'PagesController@wordList');
+Route::get('@{u}/{slug}/play', 'PagesController@playList');
 Route::get('lists', 'PagesController@wordLists');
 Route::get('play', 'PagesController@play');
 Route::get('create', 'PagesController@create');
