@@ -21,7 +21,7 @@ export default class Header extends Component {
                     <input></input><button className="small"><i className="fas fa-search"></i></button>
                 </div>
                 <div className="user-controls">
-                    <a href="account"><i className="fas fa-user-circle"></i> {user.username}</a>       
+                    <a href="register"><i className="fas fa-user-circle"></i> Join</a>       
                 </div>
             </div>  
         );
